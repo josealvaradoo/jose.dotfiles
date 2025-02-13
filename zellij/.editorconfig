@@ -1,0 +1,5 @@
+root = true
+
+[*.kdl]
+ident_size = 2
+ident_style = tab

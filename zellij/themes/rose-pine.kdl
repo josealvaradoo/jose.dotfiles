@@ -1,0 +1,15 @@
+themes {
+    rose-pine-moon {
+        bg 68 65 90         // Base
+        fg 224 222 244      // Text
+        red 235 111 146     // Love
+        green 62 143 176    // Pine
+        blue 156 207 216    // Foam
+        yellow 246 193 119  // Gold
+        magenta 196 167 231 // Iris
+        orange 246 193 119  // Gold
+        cyan 234 154 151    // Rose
+        black 57 53 82      // Surface
+        white 224 222 244   // Text
+    }
+}

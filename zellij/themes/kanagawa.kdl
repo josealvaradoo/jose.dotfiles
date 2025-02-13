@@ -1,0 +1,15 @@
+themes {
+    kanagawa_dragon {
+        fg 220 220 204
+        bg 40 40 40
+        red 195 64 67
+        green 114 143 102
+        yellow 157 143 111
+        blue 139 164 176
+        magenta 139 164 176
+        orange 255 184 108
+        cyan 139 233 253
+        black 26 26 26
+        white 141 144 157
+    }
+}
