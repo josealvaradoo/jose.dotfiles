@@ -1,0 +1,71 @@
+[colors.primary]
+background = "#232136"        # base
+foreground = "#e0def4"        # text
+dim_foreground = "#908caa"    # subtle
+bright_foreground = "#e0def4" # text
+
+[colors.cursor]
+text = "#232136"   # base
+cursor = "#e0def4" # text
+
+[colors.vi_mode_cursor]
+text = "#232136"   # base
+cursor = "#e0def4" # text
+
+[colors.selection]
+text = "#e0def4"       # text
+background = "#393552" # overlay
+
+[colors.search.matches]
+foreground = "#232136" # base
+background = "#6e6a86" # muted
+
+[colors.search.focused_match]
+foreground = "#232136" # base
+background = "#9ccfd8" # foam
+
+[colors.hints.start]
+foreground = "#232136" # base
+background = "#f6c177" # gold
+
+[colors.hints.end]
+foreground = "#232136" # base
+background = "#6e6a86" # muted
+
+[colors.line_indicator]
+foreground = "None"
+background = "None"
+
+[colors.footer_bar]
+foreground = "#232136" # base
+background = "#6e6a86" # muted
+
+[colors.normal]
+black = "#1f1d30"   # _nc
+red = "#eb6f92"     # love
+green = "#95b1ac"   # leaf
+yellow = "#f6c177"  # gold
+blue = "#3e8fb0"    # pine
+magenta = "#c4a7e7" # iris
+cyan = "#9ccfd8"    # foam
+white = "#e0def4"   # text
+
+[colors.bright]
+black = "#6e6a86"   # muted
+red = "#eb6f92"     # love
+green = "#95b1ac"   # leaf
+yellow = "#f6c177"  # gold
+blue = "#3e8fb0"    # pine
+magenta = "#c4a7e7" # iris
+cyan = "#9ccfd8"    # foam
+white = "#e0def4"   # text
+
+[colors.dim]
+black = "#1f1d30"   # _nc
+red = "#eb6f92"     # love
+green = "#95b1ac"   # leaf
+yellow = "#f6c177"  # gold
+blue = "#3e8fb0"    # pine
+magenta = "#c4a7e7" # iris
+cyan = "#9ccfd8"    # foam
+white = "#908caa"   # subtle

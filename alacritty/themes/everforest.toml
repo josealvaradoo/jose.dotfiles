@@ -1,0 +1,62 @@
+# Everforest Dark theme for Alacritty
+# Based on the Everforest color palette: https://github.com/sainnhe/everforest
+
+[colors.primary]
+background = "#2b3339"
+foreground = "#d3c6aa"
+
+[colors.normal]
+black = "#4b565c"
+red = "#e67e80"
+green = "#a7c080"
+yellow = "#dbbc7f"
+blue = "#7fbbb3"
+magenta = "#d699b6"
+cyan = "#83c092"
+white = "#d3c6aa"
+
+[colors.bright]
+black = "#4b565c"
+red = "#e67e80"
+green = "#a7c080"
+yellow = "#dbbc7f"
+blue = "#7fbbb3"
+magenta = "#d699b6"
+cyan = "#83c092"
+white = "#d3c6aa"
+
+[colors.selection]
+background = "#3f4a51"
+foreground = "#d3c6aa"
+
+[colors.cursor]
+cursor = "#d3c6aa"
+text = "#2b3339"
+
+[colors.vi_mode_cursor]
+cursor = "#d3c6aa"
+text = "#2b3339"
+
+[colors.search.matches]
+foreground = "#2b3339"
+background = "#a7c080"
+
+[colors.search.focused_match]
+foreground = "#2b3339"
+background = "#e67e80"
+
+[colors.hints.start]
+foreground = "#2b3339"
+background = "#dbbc7f"
+
+[colors.hints.end]
+foreground = "#2b3339"
+background = "#7fbbb3"
+
+[colors.line_indicator]
+foreground = "#d3c6aa"
+background = "#2b3339"
+
+[colors.footer_bar]
+foreground = "#d3c6aa"
+background = "#2b3339"
