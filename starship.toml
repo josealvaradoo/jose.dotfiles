@@ -54,7 +54,7 @@ iris = '#907aa9'
 overlay = '#3D484D' # Background color
 love = '#e67e80'    # Red
 gold = '#dbbc7f'    # Yellow
-rose = '#d699b6'    # Magenta
+rose = '#e67e80'    # Magenta
 pine = '#7fbbb3'    # Blue
 foam = '#a7c080'    # Green
 iris = '#d3c6aa'    # Foreground color
@@ -98,7 +98,7 @@ behind = '[⇣\(${count}\)](bg:overlay fg:rose)'
 
 [time]
 disabled = false
-format = "[](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)"
+format = "[](fg:overlay)[ $time  ]($style)[](fg:overlay)"
 style = "bg:overlay fg:rose"
 time_format = "%I:%M%P"
 use_12hr = true
