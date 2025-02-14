@@ -19,7 +19,7 @@
 
 # alias to create a symlink
 def ln [path: string] {
-    echo "ln -s /Volumes/SSDCrucial/Library/Application Support/$path ~/Library/Application Support/$path"
+  echo "ln -s /Volumes/SSDCrucial/Library/Application Support/$path ~/Library/Application Support/$path"
 }
 
 # remove greeting message on start
@@ -32,7 +32,7 @@ starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.n
 let rose_pine_moon_theme = {
     separator: "#817c9c"
     leading_trailing_space_bg: "#393552"
-    header: { fg: "#c4a7e7" attr: b}
+    header: { fg: "#c4a7e7" attr: b }
     empty: "#3e8fb0"
     bool: "#ebbcba"
     int: "#e0def4"
@@ -49,25 +49,30 @@ let rose_pine_moon_theme = {
     hints: "#817c9c"
 }
 
-let everforest_theme = {
-    separator: "#7fbbb3"
-    leading_trailing_space_bg: "#2b3339"
-    header: {fg: "#d3c6aa" attr: b}
-    empty: "#a7c080"
-    bool: "#e67e80"
-    int: "#d3c6aa"
-    filesize: "#7fbbb3"
-    duration: "#dbbc7f"
-    date: "#d3c6aa"
-    range: "#7fbbb3"
-    float: "#d3c6aa"
-    string: "#dbbc7f"
-    nothing: "#e67e80"
-    binary: "#e67e80"
-    cellpath: "#7fbbb3"
-    row_index: "#d3c6aa"
-    hints: "#7fbbb3"
+let everforest_theme = {  
+    separator: "#7fbbb3"  
+    leading_trailing_space_bg: "#2b3339"  
+    header: { fg: "#a7c080" attr: b }  
+    empty: "#dbbc7f"  
+    bool: "#e67e80"  
+    int: "#d3c6aa"  
+    filesize: "#7fbbb3"  
+    duration: "#dbbc7f"  
+    date: "#d3c6aa"  
+    range: "#7fbbb3"  
+    float: "#d3c6aa"  
+    string: "#d3c6aa"  
+    nothing: "#e67e80"  
+    binary: "#e67e80"  
+    cellpath: "#7fbbb3"  
+    row_index: "#d3c6aa"  
+    hints: "#7fbbb3"  
 }
 
+# Override to inherit from the default theme
+$env.LS_COLORS = ("")
+    
 # Configure colors for ls
 $env.config.color_config = $everforest_theme
+$env.ls.use_ls_colors = true
+
