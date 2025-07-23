@@ -264,9 +264,7 @@ plugins {
 load_plugins {
 }
 ui {
-    pane_frames {
-        rounded_corners true
-    }
+    pane_frames false
 }
  
 // Use a simplified UI without special fonts (arrow glyphs)
@@ -274,7 +272,7 @@ ui {
 //   - true
 //   - false (Default)
 // 
-// simplified_ui true
+simplified_ui true
  
 // Choose the theme that is specified in the themes section.
 // Default: default
@@ -324,7 +322,7 @@ mouse_mode false
 //   - true (default, enabled)
 //   - false
 // 
-// pane_frames false
+pane_frames false
  
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)

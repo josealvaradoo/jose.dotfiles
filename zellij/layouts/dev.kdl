@@ -1,38 +1,45 @@
 layout {
-  tab name="nvim" focus=true {
+  tab name="nvim" focus=true borderless=true {
     pane
   }
 
-  tab name="shell" {
+  tab name="shell" borderless=true {
     pane
   }
 
   default_tab_template {
-    children
     pane size=1 borderless=true {
       plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
         format_left "{mode} #[fg=#a7c080,bold]{session} {tabs}"
-        format_right "{command_git_branch} {datetime}"
+        format_right "{command_git_branch} {command_cpu} {command_memo} {datetime}"
         format_space ""
-
-        border_enabled true
-        border_char "─"
-        border_format "#[fg=#7fbbb3]{char}"
-        border_position "top"
-
-        hide_frame_for_single_pane true
-
-        mode_normal "#[bg=#7fbbb3,fg=#2b3339] "
-        mode_locked "#[bg=#e67e80,fg=#2b3339]  "
-        mode_tmux "#[bg=#dbbc7f,fg=#2b3339] "
+ 
+        mode_normal "#[bg=#d3c6aa,fg=#2d353b] 󰘵 NORMAL "
+        mode_locked "#[bg=#e67e80,fg=#2d353b]  LOCKED "
+        mode_tmux "#[bg=#dbbc7f,fg=#2d353b]  TMUX "
 
         tab_normal "#[fg=#d3c6aa,italic] {name} "
-        tab_active "#[bg=#dbbc7f,fg=#232a2e] #[bg=#dbbc7f,fg=#232a2e]{name} {sync_indicator}{fullscreen_indicator}{floating_indicator}"
+        tab_active "#[bg=#a7c080,fg=#2d353b] #[bg=#a7c080,fg=#2d353b]{name} "
 
         tab_sync_indicator " "
         tab_fullscreen_indicator "□ "
         tab_floating_indicator "󰉈 "
 
+        border_enabled  "true"
+        border_char     "─"
+        border_position "top"
+        border_format   "#[fg=#6C7086]{char}"
+
+        command_memo_command    "nu -c \"let pagesize_b = (sysctl -n hw.pagesize | into int); let mem_pages = (vm_stat | lines | parse '{metric}: {value}' | where metric in ['Pages active', 'Pages wired down', 'Pages occupied by compressor'] | get value | str replace -a '.' '' | into int | math sum); $mem_pages * $pagesize_b | into filesize\""
+        command_memo_format     "#[fg=blue]   {stdout}"
+        command_memo_interval   "5"
+        command_memo_rendermode "static"
+
+        command_cpu_command    "nu -c \"top -l 1 | grep 'CPU usage' | awk '{print 100 - $(NF-1)}'\""
+        command_cpu_format     "#[fg=blue]   {stdout}%"
+        command_cpu_interval   "5"
+        command_cpu_rendermode "static"
+ 
         command_git_branch_command "git rev-parse --abbrev-ref HEAD"
         command_git_branch_format "#[fg=#a7c080] {stdout} "
         command_git_branch_interval 10
@@ -42,5 +49,7 @@ layout {
         datetime_timezone "America/Caracas"
       }
     }
+
+    children
   }
 }
