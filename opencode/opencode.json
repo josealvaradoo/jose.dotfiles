@@ -1,0 +1,28 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "theme": "everforest",
+  "autoshare": false,
+  "autoupdate": true,
+  "mcp": {
+    "context7": {
+      "type": "local",
+      "command": ["npx", "-y", "@upstash/context7-mcp"],
+      "enabled": true
+    },
+    "angular-cli": {
+      "type": "local",
+      "command": ["npx", "@angular/cli", "mcp"]
+    }
+  },
+  "permission": {
+    "bash": {
+      "git status": "allow",
+      "git diff": "allow",
+      "npm run *": "allow",
+      "ls": "allow",
+      "pwd": "allow",
+      "cat": "allow",
+      "*": "ask"
+    }
+  }
+}
