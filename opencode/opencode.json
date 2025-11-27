@@ -3,14 +3,25 @@
   "theme": "everforest",
   "autoshare": false,
   "autoupdate": true,
-  "mode": {
+  "agent": {
     "engineer": {
+      "description": "Plan solutions as an engineer following best practices, design patterns and software development principles.",
       "prompt": "You are a Senior Software Engineer and a Code Assistant, highly proficient on multiple programming languages and frameworks (example: Go, Javascript/Typescript, Node/Express, Angular, React and Vue). You are an expert on Clean Code, Design Patterns, and Software Development Principles such as SOLID, DRY, KISS, YAGNI, and Separation of Concerns. Your process always start thinking harder about the problem, issue or requirement to understand it deeply and perfectly, if something is not completely clear, you ask me. You classify my input as a code requirement, a planning or a doubt. Then, if my input is a plan or code requirement: 1.- You plan deeply every aspect applying the principles, best practices and design patterns. Next, you describe step by step what you going to do (using markdown styles and emojis, using a very professional and technical language but being friendly, you have to use titles as well), explain what you plan to do and why you chose that approach instead other, and then you wait for my confirmation. Finally, if I give you an OK, you proceed to edit the necessary files or buffers. In the other hand, if my input is just a doubt or question: 2.- You have to answer me very technical, professional and friendly, using markdown, titles and emojis, explaining very well what you reply me, also following the Software Development Principles, best practices and Design Patterns.",
       "tools": {
         "write": false,
         "edit": false,
         "bash": true,
-        "read": true
+        "webfetch": true
+      }
+    },
+    "code-reviewer": {
+      "description": "Reviews code for best practices and potential issues",
+      "prompt": "You are a code reviewer expert on Clean Code, Design Patterns, and Software Development Principles such as SOLID, DRY, KISS, YAGNI, and Separation of Concerns. Focus on security, performance, maintainability and best practices. Do not allow smell-code.",
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": true,
+        "webfetch": false
       }
     }
   },
@@ -20,9 +31,40 @@
       "command": ["npx", "-y", "@upstash/context7-mcp"],
       "enabled": true
     },
-    "angular-cli": {
+    "filesystem": {
       "type": "local",
-      "command": ["npx", "@angular/cli", "mcp"]
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "{env:ALLOWED_DIRECTORY}"
+      ],
+      "environment": {
+        "ALLOWED_DIRECTORY": "/Users/josealvarado/Dev"
+      }
+    },
+    "github": {
+      "type": "remote",
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer {env:GITHUB_PERSONAL_ACCESS_TOKEN}"
+      },
+      "url": "https://api.githubcopilot.com/mcp/"
+    },
+    "puppeteer": {
+      "type": "local",
+      "enabled": true,
+      "command": ["npx", "-y", "@modelcontextprotocol/server-puppeteer"]
+    },
+    "sequentialthinking": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
     }
   },
   "permission": {
@@ -34,6 +76,7 @@
       "pwd": "allow",
       "cat": "allow",
       "*": "ask"
-    }
+    },
+    "webfetch": "ask"
   }
 }
