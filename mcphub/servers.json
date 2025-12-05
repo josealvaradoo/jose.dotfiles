@@ -1,0 +1,54 @@
+{
+  "mcpServers": {
+    "atlassian": {
+      "args": ["-y", "mcp-remote", "https://mcp.atlassian.com/v1/sse"],
+      "command": "npx",
+      "disabled": false
+    },
+    "browser": {
+      "command": "npx",
+      "args": ["@railsblueprint/blueprint-mcp@latest"]
+    },
+    "context7": {
+      "args": ["-y", "@upstash/context7-mcp"],
+      "command": "npx",
+      "env": {}
+    },
+    "filesystem": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "${ALLOWED_DIRECTORY}"
+      ],
+      "command": "npx",
+      "env": {
+        "ALLOWED_DIRECTORY": "/Users/josealvarado/Dev"
+      }
+    },
+    "github": {
+      "headers": {
+        "Authorization": "Bearer ${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      },
+      "url": "https://api.githubcopilot.com/mcp/"
+    },
+    "playwright": {
+      "args": ["@playwright/mcp@latest"],
+      "command": "npx"
+    },
+    "puppeteer": {
+      "args": ["-y", "@modelcontextprotocol/server-puppeteer"],
+      "command": "npx"
+    },
+    "sequentialthinking": {
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "command": "npx"
+    },
+    "deepseek": {
+      "command": "npx",
+      "args": ["-y", "deepseek-mcp-server"],
+      "env": {
+        "DEEPSEEK_API_KEY": "${DEEPSEEK_API_KEY}"
+      }
+    }
+  }
+}
